@@ -1,28 +1,48 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect, Fragment } from 'react';
 import './Miembros.css';
 
-// import cocapi from '../../Services/cocapi';
-import clashApi from 'clash-of-clans-api';
+import cocapi from '../../Services/cocapi';
+import { Container } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography/Typography';
+import Paper from '@material-ui/core/Paper/Paper';
+import Box from '@material-ui/core/Box/Box';
 
 const Miembros = () => {
-  // let members =
-  // cocapi.members().then(res => console.log(res));
-  // console.log(members);
-  let client = clashApi({
-    token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjBkNWZhZDA4LTBjMWItNDhmYi05OGZiLWU2YWE3NDkwMWFmYSIsImlhdCI6MTYwMTE3NDIwMSwic3ViIjoiZGV2ZWxvcGVyLzkyMGUyZDg3LTFjNDMtMDQ2YS0zYzJiLTZlMzcxM2RjYzIzMSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE5MC4xNDMuMjQ2LjExNiJdLCJ0eXBlIjoiY2xpZW50In1dfQ.k3mI8Pbe9Ygl0fQInHLBUl6W4sPN0_W_YMom5EUoBPuCpMG36j6o1Y6Xk3lsA4avDetjB7i_WmmcK6jfeiwkHQ'
-  });
+  const [members, setMembers] = useState<any[]>([]);
+  const fetchMembers = async () => {
+    try {
+      let response = await cocapi.members();
+      setMembers(response.items);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  client.clanByTag('#PGJ9JCV2')
-    .then(response => console.log(response))
-    .catch(err => console.log(err));
+  useEffect(() => {
+    fetchMembers();
+  }, []);
 
   return (
-    <div className="Miembros">
-      Miembros Component
-    </div>
+    <Fragment>
+      <Typography variant="h5">Miembros del Clan</Typography>
+      <br />
+      {
+        members.map((item, index) => {
+          return (
+            <Paper key={index} className="card-member" elevation={5}>
+              <Box display="flex" p={1}>
+                <Box>{item.name}</Box>
+                <Box>Item 2</Box>
+                <Box>Item 3</Box>
+              </Box>
+            </Paper>
+          );
+        })
+      }
+      <br />
+      <br />
+    </Fragment>
   );
 }
-
-
 
 export default Miembros;

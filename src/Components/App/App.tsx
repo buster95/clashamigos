@@ -23,12 +23,6 @@ const useStyles = makeStyles((theme: Theme) =>
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    title: {
-      display: 'none',
-      [theme.breakpoints.up('sm')]: {
-        display: 'block',
-      },
-    },
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
@@ -114,7 +108,7 @@ export default withRouter(function () {
         </Toolbar>
       </AppBar>
 
-      <div>
+      <div className="container">
         <AppRouting />
       </div>
     </Fragment >
