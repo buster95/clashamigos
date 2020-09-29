@@ -15,14 +15,10 @@ jobs:
            with:
               node-version: "13"
          - name: Install Dependencies
-           run: |
-              cd functions
-              yarn
-              cd ..
-              yarn
+           run: yarn
          - name: deploy...
            uses: w9jds/firebase-action@master
            with:
-              args: deploy --project clashamigos
+              args: deploy --project clashamigos --only hosting
            env:
               FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
