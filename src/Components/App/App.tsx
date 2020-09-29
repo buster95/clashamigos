@@ -86,7 +86,7 @@ export default withRouter(function () {
           {/* <IconButton edge="start" color="inherit" aria-label="menu">
           </IconButton> */}
           {/* <MenuIcon /> */}
-          <Typography variant="h6">Clash-Amigos</Typography>
+          <Typography variant="h6">COC-AMIGOS</Typography>
 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
