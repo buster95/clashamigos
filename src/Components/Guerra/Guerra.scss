@@ -1,0 +1,52 @@
+.enlace-current {
+   text-decoration: none;
+   cursor         : pointer;
+   margin-left    : 5px;
+
+   .MuiChip-root {
+      cursor: pointer;
+
+      &:hover {
+         box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
+            0px 10px 14px 1px rgba(0, 0, 0, 0.14),
+            0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+      }
+   }
+}
+
+.card-war {
+   position: relative;
+   width   : 100%;
+   height  : 100%;
+   padding : 5px 10px;
+   cursor  : pointer;
+
+   &:hover {
+      box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
+         0px 10px 14px 1px rgba(0, 0, 0, 0.14),
+         0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+   }
+
+   .card-war-result {
+      color           : white;
+      background-color: #1976d2;
+      margin-right    : 5px;
+
+      &.win {
+         background: #2e7d32;
+      }
+
+      &.lose {
+         background: #8e0000;
+      }
+   }
+
+   .card-flag {
+      max-width: 50px;
+      width    : 100%;
+
+      img {
+         width: 100%;
+      }
+   }
+}
