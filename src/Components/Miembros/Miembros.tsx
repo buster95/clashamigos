@@ -29,11 +29,21 @@ const Miembros = () => {
       {
         members.map((item, index) => {
           return (
-            <Paper key={index} className="card-member" elevation={5}>
+            <Paper key={index} className="card-member" elevation={2}>
               <Box display="flex" p={1}>
-                <Box>{item.name}</Box>
-                <Box>Item 2</Box>
-                <Box>Item 3</Box>
+                <Box width="10%" className="card-league">
+                  <img src={item.league.iconUrls.small} alt="clash of clans league image" loading="lazy" />
+                </Box>
+
+                <Box width="100%">
+                  <Typography variant="h6">{item.name}</Typography>
+                  <Typography variant="caption">{item.tag}</Typography>
+                </Box>
+
+                <Box className="card-trophies">
+                  <Typography variant="body1">{item.trophies}</Typography>
+                  <Typography variant="body1">{item.role}</Typography>
+                </Box>
               </Box>
             </Paper>
           );
