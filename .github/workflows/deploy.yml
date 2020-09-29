@@ -1,0 +1,27 @@
+name: deploy
+
+on:
+   push:
+      branches:
+         - prod
+
+jobs:
+   firebase:
+      runs-on: ubuntu-18.04
+      steps:
+         - uses: actions/checkout@v2
+         - name: Setup NodeJS
+           with:
+              node-version: "13"
+         - name: Install Dependencies
+           run: |
+              cd functions
+              yarn
+              cd ..
+              yarn
+         - name: deploy...
+           uses: w9jds/firebase-action@master
+           with:
+              args: deploy --project clashamigos
+           env:
+              FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
