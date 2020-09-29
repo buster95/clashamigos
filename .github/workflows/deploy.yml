@@ -13,7 +13,7 @@ jobs:
          - name: Setup NodeJS
            uses: actions/setup-node@v1
            with:
-              node-version: "13"
+              node-version: 13.x
          - name: Install Dependencies
            run: yarn
          - name: deploy...
