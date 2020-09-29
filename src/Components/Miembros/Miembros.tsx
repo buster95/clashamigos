@@ -6,6 +6,7 @@ import cocapi from '../../Services/cocapi';
 import Typography from '@material-ui/core/Typography/Typography';
 import Paper from '@material-ui/core/Paper/Paper';
 import Box from '@material-ui/core/Box/Box';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Miembros = () => {
    const [members, setMembers] = useState<any[]>([]);
@@ -26,6 +27,9 @@ const Miembros = () => {
       <Fragment>
          <Typography variant="h5">Miembros del Clan</Typography>
          <br />
+         <div style={{ display: (members.length > 0 ? 'none' : 'flex'), justifyContent: 'center', marginTop: 20 }}>
+            <CircularProgress size={60} />
+         </div>
          {
             members.map((item, index) => {
                return (
