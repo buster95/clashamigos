@@ -81,7 +81,6 @@ export default withRouter(function () {
 
   return (
     <Fragment>
-
       <AppBar position="static">
         <Toolbar>
           {/* <IconButton edge="start" color="inherit" aria-label="menu">
