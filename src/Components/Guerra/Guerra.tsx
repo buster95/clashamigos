@@ -47,7 +47,7 @@ const Guerra: React.FC = () => {
                                     {item.opponent.name}
                                     <br />
                                     <Typography variant="caption">
-                                       <a target="_blank" href={"/clan/" + item.opponent.tag}>
+                                       <a target="_blank" rel="noopener noreferrer" href={"/clan/" + item.opponent.tag}>
                                           {item.opponent.tag}
                                        </a>
                                     </Typography>
