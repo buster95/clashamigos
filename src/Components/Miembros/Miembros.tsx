@@ -32,7 +32,7 @@ const Miembros = () => {
             <Paper key={index} className="card-member" elevation={2}>
               <Box display="flex" p={1}>
                 <Box width="10%" className="card-league">
-                  <img src={item.league.iconUrls.small} alt="clash of clans league image" loading="lazy" />
+                  <img src={item.league.iconUrls.small} alt="clash of clans league" loading="lazy" />
                 </Box>
 
                 <Box width="100%">
