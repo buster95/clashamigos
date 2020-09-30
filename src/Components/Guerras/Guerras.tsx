@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import './Guerra.scss';
+import './Guerras.scss';
 import cocapi from '../../Services/cocapi';
 
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip';
 import { Box } from '@material-ui/core';
 
-const Guerra: React.FC = () => {
+const Guerras: React.FC = () => {
    const [wars, setWars] = useState([]);
 
    useEffect(() => {
@@ -86,4 +86,4 @@ const Guerra: React.FC = () => {
    );
 }
 
-export default Guerra;
+export default Guerras;
